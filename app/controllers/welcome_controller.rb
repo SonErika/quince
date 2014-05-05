@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  def show 
+  def show
     @user = User.new
   end
-end 
+end
