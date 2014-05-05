@@ -9,7 +9,7 @@ class UsersController < Clearance::UsersController
     Clearance.configuration.user_model.new(user_params).tap do |user|
       user.email = email
       user.password = password
-      user.username = username
+      user.name = name
     end
   end
 
