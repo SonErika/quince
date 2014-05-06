@@ -3,7 +3,7 @@
 
   <%= form_for @user do |form| %>
     <%= render "error_messages", target: @user %>
-    <%= render :partial => '/users/form', :object => form %>
+    <%= render partial: '/users/form', object: form %>
 
     <div class='submit-field'>
       <%= form.submit %>
