@@ -1,7 +1,9 @@
 class Dress < ActiveRecord::Base
   belongs_to :user
   has_attached_file :image,
-    styles: { medium: '700x700>' },
+    styles: {
+      medium: '700x700>' 
+    },
     storage: :s3,
     bucket: ENV.fetch('S3_BUCKET_NAME'),
     s3_credentials: {
