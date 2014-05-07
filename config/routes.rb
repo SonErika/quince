@@ -4,6 +4,8 @@ Quince::Application.routes.draw do
   resource :dashboard, only: [:show]
   resources :users, only: [:create]
 
+  resources :dresses, only: [:new, :create, :show]
+
   # root 'welcome#index'
 
   # Example of regular route:

@@ -4,6 +4,8 @@ gem 'rails', '4.0.4'
 
 gem 'pg'
 
+gem 'simple_form'
+
 gem 'sass-rails', '~> 4.0.2'
 
 gem 'uglifier', '>= 1.3.0'
