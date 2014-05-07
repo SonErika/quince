@@ -1,11 +1,13 @@
 <h1> Get $$$ for your Dress </h1> 
 <div id="new-dress-form">
-<h2> Tell us about the Dress </h2>
-<%= simple_form_for @dress do |f| %>
+  <h2> Tell us about the Dress </h2>
+  <%= simple_form_for @dress do |f| %>
   <%= render "error_messages", target: @dress %>
-    <%= f.input :name, label: "Name of the Dress" %>
-    <%= f.input :size, collection: Dress::SIZES, include_blank: false %>
-    <%= f.input :price %>
-    <%= f.input :description %>
-    <%= f.button :submit %>
-<% end %> 
+  <%= f.input :name, label: "Name of the Dress" %>
+  <%= f.input :size, collection: Dress::SIZES, include_blank: false %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.input :image %>
+  <%= f.button :submit %>
+  <% end %> 
+</div>

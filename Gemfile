@@ -1,17 +1,13 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.4'
-
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk'
 gem 'pg'
-
 gem 'simple_form'
-
 gem 'sass-rails', '~> 4.0.2'
-
 gem 'uglifier', '>= 1.3.0'
-
 gem 'coffee-rails', '~> 4.0.0'
-
 gem 'clearance'
 # gem 'therubyracer', platforms: :ruby
 
@@ -24,6 +20,10 @@ gem 'jbuilder', '~> 1.2'
 
 group :doc do
   gem 'sdoc', require: false
+end
+
+group :development do
+  gem 'dotenv-rails'
 end
 
 # gem 'bcrypt', '~> 3.1.7'
