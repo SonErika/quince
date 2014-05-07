@@ -1,7 +1,8 @@
 <h1> Dress Profile </h1>
 <div id="dress-profile-wrapper">
-<h2><%= @dress.name %></h2>
-<h3><%= @dress.size %></h3>
-<h3><%= @dress.description %></h3>
-<h3><%= @dress.price %></h3>
+  <h2><%= @dress.name %></h2>
+  <h3><%= @dress.size %></h3>
+  <h3><%= @dress.description %></h3>
+  <h3><%= @dress.price %></h3>
+  <%= image_tag @dress.image.url %>
 </div>
