@@ -10,8 +10,7 @@ class Dress < ActiveRecord::Base
       access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
       secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY')
     }
-  validates_attachment 
-    :image,
+  validates_attachment :image,
     size: {
       in: 0..20480.kilobytes,
       message: 'must be under 20MB in size.'
