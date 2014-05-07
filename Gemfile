@@ -4,7 +4,7 @@ gem 'rails', '4.0.4'
 
 gem 'pg'
 
-gem 'simple-form'
+gem 'simple_form'
 
 gem 'sass-rails', '~> 4.0.2'
 
