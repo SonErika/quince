@@ -22,7 +22,8 @@ class DressesController < ApplicationController
 
   def dress_params
     params.require(:dress).
-      permit(:name,
+      permit(
+        :name,
         :size,
         :price,
         :description,
