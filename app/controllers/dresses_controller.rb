@@ -25,9 +25,9 @@ class DressesController < ApplicationController
   def update
     @dress = current_user.dresses.find(params[:id])
     if @dress.update(dress_params)
-    redirect_to dress_path
-    else 
-      render :edit 
+      ßredirect_to dress_path
+    else
+      render :edit
     end
   end
 
