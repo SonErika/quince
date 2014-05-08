@@ -18,6 +18,24 @@ class DressesController < ApplicationController
     @dress = Dress.find(params[:id])
   end
 
+  def edit
+    @dress = current_user.dresses.find(params[:id])
+  end
+
+  def update
+    @dress = current_user.dresses.find(params[:id])
+    if @dress.update(dress_params)
+    redirect_to dress_path
+    else 
+      render :edit 
+    end
+  end
+
+  def destroy
+    dress = current_user.dresses.find(params[:id])
+    dress.destroy
+    redirect_to current_user
+  end
   private
 
   def dress_params
@@ -28,6 +46,6 @@ class DressesController < ApplicationController
         :price,
         :description,
         :image
-        )
+      )
   end
 end
