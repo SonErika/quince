@@ -1,6 +1,10 @@
 class DressesController < ApplicationController
   before_action :authorize, only: [:new, :create]
 
+  def index
+    @dresses = Dress.all
+  end
+
   def new
     @dress = Dress.new
   end
