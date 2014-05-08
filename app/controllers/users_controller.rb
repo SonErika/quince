@@ -1,4 +1,10 @@
 class UsersController < Clearance::UsersController
+
+  def show
+    @user = User.find(params[:id])
+    @dresses = @user.dresses
+  end
+
   private
 
   def user_from_params

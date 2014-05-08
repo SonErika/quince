@@ -2,7 +2,9 @@ class Dress < ActiveRecord::Base
   belongs_to :user
   has_attached_file :image,
     styles: {
-      medium: '700x700>'
+      medium: '700x700>',
+      small: '300x300>'
+
     },
     storage: :s3,
     bucket: ENV.fetch('S3_BUCKET_NAME'),
@@ -19,7 +21,8 @@ class Dress < ActiveRecord::Base
       matches: [
         /gif\Z/,
         /png\Z/,
-        /jpe?g\Z/
+        /jpe?g\Z/,
+        /JPE?G\Z/
       ],
       message:
         'needs to be one of these extensions: png, or jp(e)g.'
@@ -28,5 +31,5 @@ class Dress < ActiveRecord::Base
   validates :name, presence: true
   validates :size, presence: true
   validates :price, presence: true
-  SIZES = %w(US-1, US-2, US-4, US-6, US-8, US-10, US-12)
+  SIZES = %w(US-1 US-2 US-4 US-6 US-8 US-10 US-12)
 end
