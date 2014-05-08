@@ -1,14 +1,14 @@
 <%= link_to dress do %>
-<div>
+  <div>
   <%= image_tag dress.image.url(:small) %>
   Dress Name: <%= link_to dress.name, dress %>
   <% if dress.user == current_user %> 
-  <nav>
+    <nav>
     <%= link_to 'Edit', edit_dress_path(dress) %>
     <%= link_to 'Delete', dress,
-    method: :delete,
-    confirm: "Are you sure you want to permanently remove this dress?" %>
-  </nav>
+      method: :delete,
+      confirm: "Are you sure you want to permanently remove this dress?" %>
+    </nav>
   <% end %>
-</div>
+  </div>
 <% end %>
