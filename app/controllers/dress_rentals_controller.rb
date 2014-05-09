@@ -1,4 +1,4 @@
-class DressRentalsController < ApplicationController 
+class DressRentalsController < ApplicationController
 
   def create
     dress_rental = DressRental.new(dress_rental_params)
@@ -10,7 +10,7 @@ class DressRentalsController < ApplicationController
     end
   end
 
-private
+  private
   
   def dress_rental_params
     {
