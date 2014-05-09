@@ -4,7 +4,9 @@ Quince::Application.routes.draw do
   resource :dashboard, only: [:show]
   resources :users, only: [:create, :show]
 
-  resources :dresses
+  resources :dresses do 
+    resources :dress_rentals, only: [:new, :create]
+  end
 
   # root 'welcome#index'
 

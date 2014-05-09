@@ -4,6 +4,7 @@
   <h3><%= @dress.size %></h3>
   <h3><%= @dress.description %></h3>
   <h3> $<%= @dress.price %></h3>
+  <%= render 'rent' %>
   <h4> See more dresses from <%= link_to @dress.user.name, @dress.user %> </h4>
     <%= image_tag @dress.image.url(:medium) %>
     <% if @dress.user == current_user %> 

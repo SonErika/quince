@@ -1,0 +1,5 @@
+<% if current_user != @dress.user %>
+  <%= simple_form_for [@dress, @dress_rental] do |f| %>
+  <%= f.submit 'Rent this Dress', confirm:"Are you sure you want to rent this dress" %>
+  <% end %>
+<% end %>

@@ -12,11 +12,12 @@ gem 'clearance'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
-
+gem 'jquery-turbolinks'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+gem 'gon'
 
 group :doc do
   gem 'sdoc', require: false

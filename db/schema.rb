@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140508021010) do
+ActiveRecord::Schema.define(version: 20140508160122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dress_rentals", force: true do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "borrower_id", null: false
+    t.integer  "dress_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "dress_rentals", ["borrower_id"], name: "index_dress_rentals_on_borrower_id", using: :btree
+  add_index "dress_rentals", ["dress_id"], name: "index_dress_rentals_on_dress_id", using: :btree
 
   create_table "dresses", force: true do |t|
     t.datetime "created_at",                                    null: false
