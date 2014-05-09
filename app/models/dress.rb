@@ -1,5 +1,7 @@
 class Dress < ActiveRecord::Base
   belongs_to :user
+  has_many :dress_rental, dependent: :destroy
+
   has_attached_file :image,
     styles: {
       medium: '700x700>',
