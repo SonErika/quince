@@ -2,6 +2,27 @@ class Dress < ActiveRecord::Base
   belongs_to :user
   has_many :dress_rental, dependent: :destroy
 
+  validates :name, presence: true
+  validates :size, presence: true
+  validates :price, presence: true
+  SIZES = %w(US-1 US-2 US-4 US-6 US-8 US-10 US-12)
+
+  def self.unavailable
+    where(available: false)
+  end
+
+  def self.available
+    where(available: true)
+  end
+
+  def make_unavailable
+    update(available: false)
+  end
+
+  def make_available
+    update(available: true)
+  end
+
   has_attached_file :image,
     styles: {
       medium: '700x700>',
@@ -30,8 +51,4 @@ class Dress < ActiveRecord::Base
         'needs to be one of these extensions: png, or jp(e)g.'
     }
 
-  validates :name, presence: true
-  validates :size, presence: true
-  validates :price, presence: true
-  SIZES = %w(US-1 US-2 US-4 US-6 US-8 US-10 US-12)
 end
