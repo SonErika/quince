@@ -16,22 +16,22 @@ class DressRental < ActiveRecord::Base
   def process
     customer = create_customer
     create_charge customer
-    @borrower.update(stripe_id: customer.id)
+    borrower.update(stripe_id: customer.id)
   end
 
   private
 
-  attr_reader :dress, :user, :token
+  attr_reader :dress, :borrower, :token
 
   def create_customer
     Stripe::Customer.create(
-      email: @borrower.email,
+      email: borrower.email,
       card: token
     )
   end
 
   def total_price
-    @dress.price_cents * 100
+    dress.price_cents * 100
   end
 
   def create_charge(customer)
