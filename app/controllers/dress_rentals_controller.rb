@@ -5,7 +5,6 @@ class DressRentalsController < ApplicationController
     token = params[:stripeToken]
     dress_rental = DressRental.new(dress, current_user, token)
     dress_rental.process
-    binding.pry
       dress.make_unavailable
       redirect_to dashboard_path
   end

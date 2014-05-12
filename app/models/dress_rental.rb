@@ -22,7 +22,7 @@ class DressRental < ActiveRecord::Base
   private
 
   attr_reader :dress, :user, :token
-  
+
   def create_customer
     Stripe::Customer.create(
       email: @borrower.email,

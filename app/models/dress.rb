@@ -2,15 +2,13 @@ class Dress < ActiveRecord::Base
   belongs_to :user
   has_many :dress_rentals, dependent: :destroy
 
-  #has_paper_trail
-
   validates :name, presence: true
   validates :size, presence: true
   validates :price_cents, presence: true
   monetize :price_cents
   SIZES = %w(US-1 US-2 US-4 US-6 US-8 US-10 US-12)
 
-    def self.unavailable
+  def self.unavailable
     where(available: false)
   end
 

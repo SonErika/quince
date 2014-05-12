@@ -7,7 +7,6 @@ class DressesController < ApplicationController
 
   def new
     @dress = Dress.new
-
   end
 
   def create
