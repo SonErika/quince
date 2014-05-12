@@ -9,6 +9,8 @@ gem 'sass-rails', '~> 4.0.2'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'clearance'
+gem 'stripe', github: 'stripe/stripe-ruby'
+gem 'money-rails'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
@@ -25,6 +27,7 @@ end
 
 group :development do
   gem 'dotenv-rails'
+  gem 'pry-rails'
 end
 
 # gem 'bcrypt', '~> 3.1.7'

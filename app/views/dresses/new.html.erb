@@ -5,7 +5,7 @@
   <%= render "error_messages", target: @dress %>
   <%= f.input :name, label: "Name of the Dress" %>
   <%= f.input :size, collection: Dress::SIZES, include_blank: false %>
-  <%= f.input :price %>
+  <%= f.input :price_cents, label: "Price", hint: 'Please Use Whole dollar Amounts' %>
   <%= f.input :description %>
   <%= f.input :image %>
   <%= f.submit 'Submit Dress', alert: "Your dress submission will be reviewed by an admin shortly?" %>
