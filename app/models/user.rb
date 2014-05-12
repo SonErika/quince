@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :dresses
   has_many :rented_dresses, through: :dress_rentals, source: :dress
   has_many :dress_rentals, foreign_key: :borrower_id
+  has_many :charges
   validates :name, presence: true 
 
 end

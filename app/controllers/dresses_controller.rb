@@ -7,6 +7,7 @@ class DressesController < ApplicationController
 
   def new
     @dress = Dress.new
+
   end
 
   def create
@@ -20,7 +21,7 @@ class DressesController < ApplicationController
 
   def show
     @dress = Dress.find(params[:id])
-    @dress_rental = DressRental.new
+    @cost = @dress.price_cents * 100
   end
 
   def edit
@@ -48,7 +49,7 @@ class DressesController < ApplicationController
       permit(
         :name,
         :size,
-        :price,
+        :price_cents,
         :description,
         :image
       )

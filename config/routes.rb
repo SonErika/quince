@@ -2,11 +2,16 @@ Quince::Application.routes.draw do
   root 'welcome#show'
 
   resource :dashboard, only: [:show]
+  
   resources :users, only: [:create, :show]
 
-  resources :dresses do
+  resources :dresses, except: [:show]
+
+  resources :dresses, only: [:show] do
     resources :dress_rentals, only: [:create]
   end
+
+end
 
   # root 'welcome#index'
 
@@ -58,4 +63,4 @@ Quince::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+

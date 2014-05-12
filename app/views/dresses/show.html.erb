@@ -3,7 +3,7 @@
   <h2><%= @dress.name %></h2>
   <h3><%= @dress.size %></h3>
   <h3><%= @dress.description %></h3>
-  <h3> $<%= @dress.price %></h3>
+  <h3> <%= number_to_currency(@dress.price_cents) %></h3>
   <% if @dress.available %>
     <%= render 'rent' %>
   <% end %>

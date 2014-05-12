@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140508160122) do
+ActiveRecord::Schema.define(version: 20140511230940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20140508160122) do
     t.string   "name",               limit: 20,                 null: false
     t.string   "size",                                          null: false
     t.text     "description"
-    t.decimal  "price",                                         null: false
     t.boolean  "available",                     default: true
     t.integer  "user_id"
     t.string   "image_file_name"
@@ -42,6 +41,8 @@ ActiveRecord::Schema.define(version: 20140508160122) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.boolean  "published",                     default: false
+    t.integer  "price_cents",                   default: 0,     null: false
+    t.string   "price_currency",                default: "USD", null: false
   end
 
   add_index "dresses", ["user_id"], name: "index_dresses_on_user_id", using: :btree
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(version: 20140508160122) do
     t.string   "confirmation_token", limit: 128
     t.string   "remember_token",     limit: 128,                 null: false
     t.boolean  "admin",                          default: false
+    t.string   "stripe_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
