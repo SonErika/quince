@@ -6,5 +6,4 @@ class DashboardsController < ApplicationController
     @rented_dresses = current_user.rented_dresses
     @lended_dresses = current_user.dresses.where(available: false)
   end
-
 end

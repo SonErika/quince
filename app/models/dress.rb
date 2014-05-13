@@ -2,7 +2,6 @@ class Dress < ActiveRecord::Base
   belongs_to :user
   has_many :dress_rentals, dependent: :destroy
 
-
   validates :name, presence: true, uniqueness: true
   validates :size, presence: true
   validates :price_cents, presence: true
