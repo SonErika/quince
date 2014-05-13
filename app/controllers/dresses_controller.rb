@@ -2,7 +2,7 @@ class DressesController < ApplicationController
   before_action :authorize, only: [:new, :create]
 
   def index
-    @dresses = Dress.where(published: true)
+    @dresses = Dress.published
   end
 
   def new

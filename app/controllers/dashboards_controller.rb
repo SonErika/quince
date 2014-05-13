@@ -4,6 +4,6 @@ class DashboardsController < ApplicationController
   def show
     @owned_dresses = current_user.dresses
     @rented_dresses = current_user.rented_dresses
-    @lended_dresses = current_user.dresses.where(available: false)
+    @lended_dresses = current_user.dresses.unavailable
   end
 end
