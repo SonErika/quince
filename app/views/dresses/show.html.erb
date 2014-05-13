@@ -6,6 +6,8 @@
   <h3> <%= number_to_currency(@dress.price_cents) %></h3>
   <% if @dress.available %>
     <%= render 'rent' %>
+  <% else %>
+    <h3> This Dress is currently being Borrowed </h3>
   <% end %>
   <h4> See more dresses from <%= link_to @dress.user.name, @dress.user %> </h4>
     <%= image_tag @dress.image.url(:medium) %>
