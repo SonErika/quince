@@ -2,7 +2,7 @@ class DressesController < ApplicationController
   before_action :authorize, only: [:new, :create]
 
   def index
-    @dresses = Dress.all
+    @dresses = Dress.published
   end
 
   def new
@@ -30,6 +30,9 @@ class DressesController < ApplicationController
   def update
     @dress = current_user.dresses.find(params[:id])
     if @dress.update(dress_params)
+      unless current_user.admin?
+        @dress.unpublish
+      end
       redirect_to dress_path
     else
       render :edit
@@ -50,7 +53,8 @@ class DressesController < ApplicationController
         :size,
         :price_cents,
         :description,
-        :image
+        :image,
+        :published
       )
   end
 end

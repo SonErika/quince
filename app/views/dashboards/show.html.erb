@@ -1,6 +1,15 @@
 <h2> Hello <%= current_user.name %></h2>
 <div>
-  <%= render @owner_dresses %>
+  Your Dresses
+  <%= render @owned_dresses %>
+</div>
+<div>
+  Dresses You're Currently Borrowing
+  <%= render @rented_dresses %>
+</div>
+<div>
+  Dresses You are Currently Lending
+  <%= render @lended_dresses %>
 </div>
 <div>
   <%= render "find_or_cash" %>

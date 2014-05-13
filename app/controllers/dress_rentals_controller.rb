@@ -1,5 +1,6 @@
 class DressRentalsController < ApplicationController
-
+  before_action :authorize
+  
   def create
     dress_rental = DressRental.new(dress_rental_params)
     logger.debug dress_rental_params.inspect

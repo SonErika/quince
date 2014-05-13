@@ -5,10 +5,12 @@
   <% if dress.user == current_user %> 
     <nav>
     <%= link_to 'Edit', edit_dress_path(dress) %>
-    <%= link_to 'Delete', dress,
-      method: :delete,
-      confirm: "Are you sure you want to permanently remove this dress?" %>
-    </nav>
+    <% if current_user.admin? %>
+      <%= link_to 'Delete', dress,
+        method: :delete,
+        confirm: "Are you sure you want to permanently remove this dress?" %>
+      </nav>
+    <% end %>  
   <% end %>
   </div>
 <% end %>

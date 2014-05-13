@@ -1,0 +1,12 @@
+<%= simple_form_for @dress do |f| %>  
+  <%= render "error_messages", target: @dress %>
+  <% if current_user.admin == true %>
+    <%= f.input :published, label: "Publish this ISH!" %>
+    <% end %> 
+  <%= f.input :name, label: "Name of the Dress" %>
+  <%= f.input :size, collection: Dress::SIZES, include_blank: false %>
+  <%= f.input :price_cents, label: "Price", hint: 'Please Use Whole dollar Amounts' %>
+  <%= f.input :description %>
+  <%= f.input :image %>
+  <%= f.submit 'Submit Dress', alert: "Your dress submission will be reviewed by an admin shortly" %>
+  <% end %> 

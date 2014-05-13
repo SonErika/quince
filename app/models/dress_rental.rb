@@ -9,7 +9,7 @@ class DressRental < ActiveRecord::Base
 
   DESCRIPTION = 'Rent This Dress'
 
-def process(borrower, token, dress)
+  def process(borrower, token, dress)
     customer = create_customer(borrower, token)
     create_charge(customer, dress)
     borrower.update(stripe_id: customer.id)

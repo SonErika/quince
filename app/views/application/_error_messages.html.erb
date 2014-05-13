@@ -2,5 +2,8 @@
   <div>
       <h3>Your action  was unsucessful for the following <%= target.errors.full_messages.count %> reasons: </h3>
   </div>
+  <% target.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
 <% end %>
 
