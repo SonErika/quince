@@ -1,7 +1,7 @@
 <%= simple_form_for @dress do |f| %>  
   <%= render "error_messages", target: @dress %>
   <% if current_user.admin == true %>
-    <%= f.input :published, label: "Publish this ISH!" %>
+    <%= f.input :published, label: "Publish this:" %>
     <% end %> 
   <%= f.input :name, label: "Name of the Dress" %>
   <%= f.input :size, collection: Dress::SIZES, include_blank: false %>
