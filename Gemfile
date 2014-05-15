@@ -11,6 +11,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'clearance'
 gem 'stripe', github: 'stripe/stripe-ruby'
 gem 'money-rails'
+gem 'bootstrap-sass', '~> 3.1.1'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'

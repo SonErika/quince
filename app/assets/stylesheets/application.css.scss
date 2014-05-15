@@ -1,0 +1,21 @@
+@import "bootstrap";
+@import "welcome_page";
+@import "find_or_cash";
+
+@font-face {
+  font-family: 'din_alternatebold';
+  src:font-url('din_alternate_bold.eot');
+  src:font-url('din_alternate_bold.eot?#iefix') format('embedded-opentype'),
+    url('din_alternate_bold.woff') format('woff'),
+    url('din_alternate_bold.ttf') format('truetype'),
+    url('din_alternate_bold.svg#din_alternatebold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'din_condensedbold';
+    src:font-url('din_condensed_bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
